@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from madsi.models import Answer
+from madsi.serializers import AnswerSerializer
+from rest_framework import generics
 
-# Create your views here.
+
+class AnswersListView(generics.ListCreateAPIView):
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
