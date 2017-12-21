@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Message(models.Model):
-    content = models.CharField(max_length=500)
-    email = models.TextField(max_length=64)
+    content = models.TextField()
+    email = models.CharField(max_length=64)
 
 
 
@@ -21,4 +21,4 @@ ANSWER_CHOICES = (
 
 
 class MyAnswer(models.Model):
-    answer = models.CharField(max_length=500, )
+    answer = models.TextField()
