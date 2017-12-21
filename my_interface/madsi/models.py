@@ -6,6 +6,10 @@ class Message(models.Model):
     email = models.CharField(max_length=64)
 
 
+class Answers(models.Model):
+    subject = models.CharField(max_length=64)
+    content = models.TextField()
+
 
 ANSWER_CHOICES = (
     ('ans_this_wk', 'twk'),
