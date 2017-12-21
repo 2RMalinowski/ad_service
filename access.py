@@ -1,24 +1,22 @@
 from bs4 import BeautifulSoup
 import requests
+from config import log_mail, log_pass
 
-# first visit the login page to generate one
-
+url = 'https://www.olx.pl/konto/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index'
 s = requests.session()
 
-s.get('https://www.olx.pl/konto/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index')
+s.get(url)
 
-# now post to that login page with some valid credentials and the token
-# from confing import zmienne
+# now post to that login page with some valid credentials
+
 auth = {
-    'login[email]': 't411701@mvrht.net'
-    , 'login[password]': 'cobin4hood4'
+    'login[email]': log_mail
+    , 'login[password]': log_pass
 }
-s.post('https://www.olx.pl/konto/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index', data=auth)
+s.post(url, data=auth)
 
 
-# now we should be authenticated, try visiting a protected page
-# response = s.get('https://www.olx.pl/konto/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index')
-# print(response.text)
+# print(s.get(url).text)
 
 
 source_code = s.get('https://www.olx.pl/mojolx/odpowiedzi')
