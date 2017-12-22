@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from madsi.views import (AnswersListView)
+# from madsi.views import (AnswersListView)
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^answers$', AnswersListView.as_view())
+    # url(r'^answers$', AnswersListView.as_view())
 ]
