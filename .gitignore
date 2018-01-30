@@ -7,7 +7,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-config.py
+auth.py
 
 # C extensions
 *.so
