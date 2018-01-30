@@ -1,3 +1,3 @@
 # ad_service
 OLX interface
-Projekt umożliwiający korespondencję masową z ominięcim interfejsu serwisu ogłoszeniowego OLX. Wykrzytuje Django, Beautifiul Soup oraz klienta poczty. Aktualnie w trakcie realizacji
+Own UI for OLX ad service. Allow mass mailing and giving answers for aplicants using answer standards like emails client. Using Django and REST API. Durig Implementation.
