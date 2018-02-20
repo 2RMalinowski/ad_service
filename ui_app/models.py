@@ -17,7 +17,7 @@ class Message(models.Model):
         ('ans_ms_next_wk', 'ms_next_week'),
         ('ans_mr_next_wk', 'mr_next_week'),
     )
-    
+
     selected = models.BooleanField(default=False)
     author = models.CharField(max_length=50)
     ad_body = models.TextField()
