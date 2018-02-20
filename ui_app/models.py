@@ -18,4 +18,4 @@ class Message(models.Model):
     author = models.CharField(max_length=50)
     ad_body = models.TextField()
     ad_date = models.DateTimeField(default=timezone.now)
-    answer = models 
+    answer = models.TextField(choices=ANSWER_CHOICES)
