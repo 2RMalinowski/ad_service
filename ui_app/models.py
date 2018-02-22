@@ -22,4 +22,5 @@ class Message(models.Model):
     author = models.CharField(max_length=50)
     ad_body = models.TextField()
     ad_date = models.DateTimeField(default=timezone.now)
+    date_hierarchy = 'ad_date'
     answer = models.TextField(choices=ANSWER_CHOICES, default='ans_this_wk')
