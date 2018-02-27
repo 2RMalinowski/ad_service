@@ -5,6 +5,7 @@ __pycache__/
 *$py.class
 auth.py
 answers.py
+tst.py
 
 # C extensions
 *.so
