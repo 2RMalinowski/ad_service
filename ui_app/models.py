@@ -2,7 +2,13 @@ from .answers import *
 from django.db import models
 # from django.contrib.auth.models import User
 from django.utils import timezone
+
 ans_this_wk = ans_1
+
+
+class MessageManager(models.Manager):
+    def get_queryset(self):
+        return super(MessageManager, self).get_queryset().filter(status='incoming')
 
 
 class Message(models.Model):
@@ -24,3 +30,7 @@ class Message(models.Model):
     ad_date = models.DateTimeField(default=timezone.now)
     date_hierarchy = 'ad_date'
     answer = models.TextField(choices=ANSWER_CHOICES, default='ans_this_wk')
+    status = models.CharField(max_length=10, default='incoming')
+    objects = models.Manager()
+    incoming = MessageManager()
+
