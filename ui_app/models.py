@@ -1,9 +1,7 @@
-from .answers import *
 from django.db import models
 # from django.contrib.auth.models import User
 from django.utils import timezone
 
-ans_this_wk = ans_1
 
 
 class MessageManager(models.Manager):
@@ -22,6 +20,10 @@ class Message(models.Model):
         ('ans_next_wk<18', 'next_week<18'),
         ('ans_mr_next_wk', 'mr_next_week'),
         ('ans_ms_next_wk', 'ms_next_week'),
+        ('ans_other_term', 'other_term'),
+        ('ans_other_term_mr', 'mr_other_term'),
+        ('ans_other_term_ms', 'ms_other_term'),
+        ('ans_office', 'office'),
         ('inv_m_orday', 'inv_m'),
         ('inv_m_wknday', 'inv_m_wknd'),
         ('inv_f_orday', 'inv_f'),
@@ -30,6 +32,10 @@ class Message(models.Model):
         ('inv_mr_wknday', 'inv_mr_wknd'),
         ('inv_ms_orday', 'inv_ms'),
         ('inv_ms_wknday', 'inv_ms_wknd'),
+        ('inv_scnd', 'inv_rptd'),
+        ('inv_mr_scnd', 'inv_mr_rptd'),
+        ('inv_ms_scnd', 'inv_ms_rptd'),
+        ('blank', 'manual'), #  to discuss
 
     )
 
@@ -44,8 +50,8 @@ class Message(models.Model):
     incoming = MessageManager()
 
 
-class Answer(models.Model):
-    s
+# class Answer(models.Model):
+#
 
 
 
