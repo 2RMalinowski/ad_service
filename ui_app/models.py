@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 class MessageManager(models.Manager):
@@ -50,17 +50,18 @@ class Message(models.Model):
 
 
 class Answer(models.Model):
-    template_name = models.CharField(max_length=15)
+    template_name = models.CharField(max_length=20)
     template_body = models.TextField()
-    author = models.ForeignKey(User,
-                               on_delete=models.CASCADE,
-                               related_name='templates')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
 
 class Meta:
-    ordering = ('-created',)
+    ordering = ('created',)
+
+
+def __str__(self):
+        return self.title
 
 
 
