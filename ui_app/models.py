@@ -1,7 +1,6 @@
 from django.db import models
-# from django.contrib.auth.models import User
 from django.utils import timezone
-
+from django.contrib.auth.models import User
 
 
 class MessageManager(models.Manager):
@@ -33,9 +32,9 @@ class Message(models.Model):
         ('inv_ms_orday', 'inv_ms'),
         ('inv_ms_wknday', 'inv_ms_wknd'),
         ('inv_scnd', 'inv_rptd'),
-        ('inv_mr_scnd', 'inv_mr_rptd'),
+        ('inv_mr_scnd', 'inv_mr_r7ptd'),
         ('inv_ms_scnd', 'inv_ms_rptd'),
-        ('blank', 'manual'), #  to discuss
+        ('ans_blank', 'manual'),  #  to discuss
 
     )
 
@@ -50,8 +49,18 @@ class Message(models.Model):
     incoming = MessageManager()
 
 
-# class Answer(models.Model):
-#
+class Answer(models.Model):
+    template_name = models.CharField(max_length=15)
+    template_body = models.TextField()
+    author = models.ForeignKey(User,
+                               on_delete=models.CASCADE,
+                               related_name='templates')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+
+class Meta:
+    ordering = ('-created',)
 
 
 
