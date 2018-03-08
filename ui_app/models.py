@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 
 class MessageManager(models.Manager):
@@ -23,6 +23,9 @@ class Message(models.Model):
         ('ans_other_term_mr', 'mr_other_term'),
         ('ans_other_term_ms', 'ms_other_term'),
         ('ans_office', 'office'),
+        ('ans_scnd_next_wk', 'next_week_scnd'),
+        ('ans_mr_scnd_next_wk', 'mr_next_week_scnd'),
+        ('ans_ms_scnd_next_wk', 'ms_next_week_scnd'),
         ('inv_m_orday', 'inv_m'),
         ('inv_m_wknday', 'inv_m_wknd'),
         ('inv_f_orday', 'inv_f'),
@@ -32,7 +35,7 @@ class Message(models.Model):
         ('inv_ms_orday', 'inv_ms'),
         ('inv_ms_wknday', 'inv_ms_wknd'),
         ('inv_scnd', 'inv_rptd'),
-        ('inv_mr_scnd', 'inv_mr_r7ptd'),
+        ('inv_mr_scnd', 'inv_mr_rptd'),
         ('inv_ms_scnd', 'inv_ms_rptd'),
         ('ans_blank', 'manual'),  #  to discuss
 
@@ -52,9 +55,8 @@ class Message(models.Model):
 class Answer(models.Model):
     template_name = models.CharField(max_length=20)
     template_body = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
+    created = models.DateTimeField(default=timezone.now)
+ 
 
 class Meta:
     ordering = ('created',)
