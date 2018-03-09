@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class MessageManager(models.Manager):
     def get_queryset(self):
-        return super(MessageManager, self).get_queryset().filter(status='incoming')
+        return super(MessageManager, self).get_queryset().filter(status='unread')
 
 
 class Message(models.Model):
@@ -49,10 +49,18 @@ class Message(models.Model):
     incoming = MessageManager()
 
 
+class CreatedManager(models.Manager):
+    def get_queryset(self):
+        return super(CreatedManager, self).get_queryset().filter(status='created')
+
+
 class Answer(models.Model):
     template_name = models.CharField(max_length=20)
     template_body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
+    updated = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
+    published = CreatedManager()
  
 
 class Meta:
