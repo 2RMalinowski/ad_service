@@ -20,7 +20,7 @@ from ui_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.answer_list, name='answer_list'),
+    # path('', views.answer_list, name='answer_list'),
     path('', include('ui_app.urls')),
     # path(views.AnswerListView.as_view(), name='answer_list'),
     # path('<int:year>/<int:month>/<int:day>/', views.answer_detail, name='answer_detail')

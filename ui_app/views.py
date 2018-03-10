@@ -9,4 +9,3 @@ def message_list(request):
 def answer_list(request):
     return render(request, 'ad_service/answer_list.html', {})
 
-

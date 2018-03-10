@@ -1,7 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.answer_list, name='answer_list'),
+    path('', views.answer_list, name='answer_list'),
+    path('', views.message_list, name='message_list'),
 ]
