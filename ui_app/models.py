@@ -49,26 +49,22 @@ class Message(models.Model):
     incoming = MessageManager()
 
 
-class CreatedManager(models.Manager):
-    def get_queryset(self):
-        return super(CreatedManager, self).get_queryset().filter(status='created')
-
-
 class Answer(models.Model):
     template_name = models.CharField(max_length=20)
     template_body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
-    objects = models.Manager()
-    published = CreatedManager()
- 
-
-class Meta:
-    ordering = ('created',)
 
 
-def __str__(self):
-        return self.title
+# class Meta:
+#     ordering = ('created',)
+
+    def create(self):
+        self.created_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+            return self.template_name
 
 
 

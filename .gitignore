@@ -6,6 +6,7 @@ __pycache__/
 auth.py
 answers.py
 tst.py
+db.sqlite3
 
 # C extensions
 *.so
