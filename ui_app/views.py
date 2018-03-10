@@ -3,9 +3,9 @@ from .models import Answer, Message
 
 
 def message_list(request):
-    return render(request, 'ad_service/message_list.html', {})
+    return render(request, 'ui_app/message_list.html', {})
 
 
 def answer_list(request):
-    return render(request, 'ad_service/answer_list.html', {})
+    return render(request, 'ui_app/answer_list.html', {})
 

@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ad_service.urls'
+ROOT_URLCONF = 'ui_app.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ad_service.wsgi.application'
+WSGI_APPLICATION = 'ui_app.wsgi.application'
 
 
 # Database
@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'ad_service.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ad_service',
+        'NAME': 'ui_app',
         'USER': 'postgres',
         'PASSWORD': pg_pass,
         'HOST': '127.0.0.1',
