@@ -35,22 +35,21 @@ class Message(models.Model):
         ('inv_mr_scnd', 'inv_mr_rptd'),
         ('inv_ms_scnd', 'inv_ms_rptd'),
         ('ans_blank', 'manual'),  # to discuss
-
     )
 
     selected = models.BooleanField(default=False)
+    ans_choice = models.TextField(choices=ANSWER_CHOICES, default='ans_this_wk')
     author = models.CharField(max_length=50)
-    ad_body = models.TextField()
-    ad_date = models.DateTimeField(default=timezone.now)  # ultimate date of incoming how to?
+    msg_body = models.TextField()
+    msg_date = models.DateTimeField(default=timezone.now)  # ultimate date of incoming how to?
     date_hierarchy = 'ad_date'
-    answer = models.TextField(choices=ANSWER_CHOICES, default='ans_this_wk')
+    # answer = models.TextField()
     status = models.CharField(max_length=10, default='incoming')
     objects = models.Manager()
     incoming = MessageManager()
 
 
 class Answer(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     tmp_desc = models.CharField(max_length=20)
     tmp_body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
