@@ -1,4 +1,5 @@
 from auth import secret_key, pg_pass
+<<<<<<< HEAD
 import dj_database_url
 import os
 
@@ -6,6 +7,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMP_DIR = os.path.join(BASE_DIR, 'templates')
+=======
+import os
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
 
 # Quick-start development settings - unsuitable for production
@@ -17,7 +24,11 @@ SECRET_KEY = secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+=======
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
 
 # Application definition
@@ -42,13 +53,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+<<<<<<< HEAD
 ROOT_URLCONF = 'ad_service.urls'
+=======
+ROOT_URLCONF = 'ui_app.urls'
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+<<<<<<< HEAD
         'TEMP_DIR'
+=======
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,8 +79,13 @@ TEMPLATES = [
     },
 ]
 
+<<<<<<< HEAD
 WSGI_APPLICATION = 'ad_service.wsgi.application'
     
+=======
+WSGI_APPLICATION = 'ui_app.wsgi.application'
+
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -70,7 +93,11 @@ WSGI_APPLICATION = 'ad_service.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+<<<<<<< HEAD
         'NAME': 'ad_service',
+=======
+        'NAME': 'ui_app',
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
         'USER': 'postgres',
         'PASSWORD': pg_pass,
         'HOST': '127.0.0.1',
@@ -116,4 +143,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+=======
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485

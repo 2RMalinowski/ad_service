@@ -5,7 +5,10 @@ __pycache__/
 *$py.class
 auth.py
 answers.py
+<<<<<<< HEAD
 local_settings.py
+=======
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 tst.py
 db.sqlite3
 
@@ -109,7 +112,10 @@ ENV/
 .Slides/
 .idea/
 *.pyc
+<<<<<<< HEAD
 answers.ods
+=======
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
 <<<<<<< HEAD
 *~

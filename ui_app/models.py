@@ -34,14 +34,22 @@ class Message(models.Model):
         ('inv_scnd', 'inv_rptd'),
         ('inv_mr_scnd', 'inv_mr_rptd'),
         ('inv_ms_scnd', 'inv_ms_rptd'),
+<<<<<<< HEAD
         ('ans_blank', 'manual'),  # to discuss
+=======
+        ('ans_blank', 'manual'),  #  to discuss
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
 
     )
 
     selected = models.BooleanField(default=False)
     author = models.CharField(max_length=50)
     ad_body = models.TextField()
+<<<<<<< HEAD
     ad_date = models.DateTimeField(default=timezone.now)  # ultimate date of incoming how to?
+=======
+    ad_date = models.DateTimeField(default=timezone.now)
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
     date_hierarchy = 'ad_date'
     answer = models.TextField(choices=ANSWER_CHOICES, default='ans_this_wk')
     status = models.CharField(max_length=10, default='incoming')
@@ -50,15 +58,35 @@ class Message(models.Model):
 
 
 class Answer(models.Model):
+<<<<<<< HEAD
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     tmp_desc = models.CharField(max_length=20)
     tmp_body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
 
+=======
+    template_name = models.CharField(max_length=20)
+    template_body = models.TextField()
+    created = models.DateTimeField(default=timezone.now)
+    updated = models.DateTimeField(auto_now=True)
+
+
+# class Meta:
+#     ordering = ('created',)
+
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
     def create(self):
         self.created_date = timezone.now()
         self.save()
 
     def __str__(self):
+<<<<<<< HEAD
             return self.tmp_desc
+=======
+            return self.template_name
+
+
+
+
+>>>>>>> 2a4ab3107b197b6efa4489ff41b7551b7f6cc485
