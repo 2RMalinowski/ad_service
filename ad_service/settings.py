@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ui_app',
+    # 'ui_app',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ad_service.wsgi.application'
+# WSGI_APPLICATION = 'ad_service.wsgi.application'
 
 
 # Database
