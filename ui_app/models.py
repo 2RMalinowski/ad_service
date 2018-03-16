@@ -48,11 +48,18 @@ class Message(models.Model):
     objects = models.Manager()
     incoming = MessageManager()
 
+    def create(self):
+        self.created_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+            return self.msg_date
+
 
 class Answer(models.Model):
     tmp_desc = models.CharField(max_length=20)
     tmp_body = models.TextField()
-    created = models.DateTimeField(default=timezone.now)
+    created = models.DateTimeField(blank=True, null=True)
     updated = models.DateTimeField(auto_now=True)
 
     def create(self):
@@ -61,3 +68,5 @@ class Answer(models.Model):
 
     def __str__(self):
             return self.tmp_desc
+
+

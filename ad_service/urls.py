@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ui_app.urls')),
     path('', views.answer_list, name='answer_list'),
+    path('', views.message_list, name='message_list'),
     # path(views.AnswerListView.as_view(), name='answer_list'),
     # path('<int:year>/<int:month>/<int:day>/', views.answer_detail, name='answer_detail')
 ]
